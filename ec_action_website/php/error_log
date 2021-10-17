@@ -1,0 +1,26 @@
+[01-Sep-2021 21:04:18 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/linozanw/public_html/php/dbh.inc.php on line 20
+[01-Sep-2021 21:04:18 America/New_York] PHP Notice:  Undefined index: report in /home/linozanw/public_html/php/action_EnterReport.php on line 7
+[01-Sep-2021 21:04:18 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/linozanw/public_html/php/action_EnterReport.php on line 10
+[01-Sep-2021 21:04:18 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home/linozanw/public_html/php/action_EnterReport.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/linozanw/public_html/php/action_EnterReport.php on line 21
+[01-Sep-2021 21:04:25 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/linozanw/public_html/php/dbh.inc.php on line 20
+[01-Sep-2021 21:04:25 America/New_York] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/linozanw/public_html/php/action_MakeReportList.php on line 5
+[01-Sep-2021 21:04:25 America/New_York] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/linozanw/public_html/php/action_MakeReportList.php on line 5
+[01-Sep-2021 21:20:28 America/New_York] PHP Warning:  mysqli_connect(): (42000/1044): Access denied for user 'linozanw'@'199.188.200.24' to database 'linozanw_ecdatabaseecdatabase' in /home/linozanw/public_html/php/dbh.inc.php on line 20
+[01-Sep-2021 21:20:28 America/New_York] PHP Notice:  Undefined index: report in /home/linozanw/public_html/php/action_EnterReport.php on line 7
+[01-Sep-2021 21:20:28 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/linozanw/public_html/php/action_EnterReport.php on line 10
+[01-Sep-2021 21:20:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home/linozanw/public_html/php/action_EnterReport.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/linozanw/public_html/php/action_EnterReport.php on line 21
+[01-Sep-2021 21:22:45 America/New_York] PHP Notice:  Undefined index: report in /home/linozanw/public_html/php/action_EnterReport.php on line 7
+[01-Sep-2021 21:22:45 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/linozanw/public_html/php/action_EnterReport.php on line 10
+[01-Sep-2021 21:23:12 America/New_York] PHP Notice:  Undefined index: report in /home/linozanw/public_html/php/action_EnterReport.php on line 7
+[01-Sep-2021 21:23:12 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/linozanw/public_html/php/action_EnterReport.php on line 10
+[02-Sep-2021 22:00:40 America/New_York] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/linozanw/public_html/php/dbh.inc.php on line 23
+[02-Sep-2021 22:00:40 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home/linozanw/public_html/php/action_EnterReport.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/linozanw/public_html/php/action_EnterReport.php on line 21
