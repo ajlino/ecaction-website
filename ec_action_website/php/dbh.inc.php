@@ -8,16 +8,16 @@
   //Bellow we create the necessary database connection info
 
   // Webserver
-  $dbServername = "server311.web-hosting.com";
-  $dbUsername = "ecactzqq";
-  $dbPassword = "06ectVmGhAs7";
-  $dbName = "ecactzqq_ecdatabase";
+  //$dbServername = "server311.web-hosting.com";
+  //$dbUsername = "ecactzqq";
+  //$dbPassword = "06ectVmGhAs7";
+  //$dbName = "ecactzqq_ecdatabase";
 
   //localserver
-    // $dbServername = "localhost";
-    // $dbUsername = "root";
-    // $dbPassword = "";
-    // $dbName = "ecdatabase";
+  $dbServername = "localhost";
+  $dbUsername = "root";
+  $dbPassword = "";
+  $dbName = "ecdatabase";
 
   //Here we create the connection and set it equal to a variable so we can refer to it later when we need to connect.
   $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);

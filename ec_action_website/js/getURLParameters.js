@@ -1,4 +1,6 @@
 
+//gets the URL Parameters. Reads room# from URL and adds it to #room
+
 $(document).ready(function(){
 
 
@@ -12,9 +14,6 @@ $(document).ready(function(){
 
   $("#demo").text("ROOM: " + room);
   $("#room").val(room);
-  console.log ("Bingo");
   console.log("ROOM for PHP = " + $("#room").val());
-  // document.getElementById("demo").innerHTML = "ROOM NUMBER = " + room;
-  // room Number
 
 });
