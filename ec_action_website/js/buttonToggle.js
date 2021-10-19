@@ -2,9 +2,14 @@
 
 $(document).ready(function(){
 
+  $("#equipment").click(function(){
+    $("#modal-equipment").modal("show")
+  });
+
   $(".reportButton").on("click", function(){
     var $value = $(this).val();
 
+    // Toggle Button color when checked/unchecked
     if ($(this).data("checked")=="true"){
       $(this).removeClass("btn-danger");
       $(this).addClass("btn-light");
@@ -19,7 +24,6 @@ $(document).ready(function(){
       console.log ($value + "ADDED");
       $(this).data("checked", "true");
     }
-
   })
 
 

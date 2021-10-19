@@ -74,12 +74,13 @@
 
         <div class="container" id="cards">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
             <!-- Card 1 -->
             <div class="col">
               <div class="card shadow-sm">
 
                 <!-- <a href="page2.html"> -->
-                  <img class="bd-placeholder-img card-img-top" src="images\cart.jpg" class="card-img-top" />
+                  <img id="equipment" class="bd-placeholder-img card-img-top" src="images\cart.jpg" class="card-img-top" />
                 <!-- </a> -->
 
                 <div class="card-body">
@@ -135,6 +136,27 @@
         </div>
       </form>
 
+      </div>
+
+      <!--Modal 1 Equipment -->
+      <div class="modal fade" id="modal-equipment" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </main>
