@@ -2,8 +2,18 @@
 
 $(document).ready(function(){
 
+  var inputbox="";
+
   $("#equipment").click(function(){
     $("#modal-equipment").modal("show")
+  });
+
+  $('#equipmentList .dropdown-item').on('click', function(){
+    inputbox += $(this).text();
+    $("#inputbox").val(inputbox);
+    // $("#inputbox").val($(this).text());
+    console.log(inputbox);
+
   });
 
   $(".reportButton").on("click", function(){
