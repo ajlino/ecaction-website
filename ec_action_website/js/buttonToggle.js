@@ -8,12 +8,8 @@ $(document).ready(function(){
     $("#modal-equipment").modal("show")
   });
 
-  $('#equipmentList .dropdown-item').on('click', function(){
-    inputbox += $(this).text();
-    $("#inputbox").val(inputbox);
-    // $("#inputbox").val($(this).text());
-    console.log(inputbox);
-
+  $('#saveChanges').on('click', function(){
+    console.log($('#equipmentPick').val());
   });
 
   $(".reportButton").on("click", function(){
