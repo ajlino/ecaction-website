@@ -2,19 +2,16 @@
 	//Here we include our database connection
 	include_once 'dbh.inc.php';
 
-	//Here we fetch the data from the URL that was passed from our HTML form
-	$room = $_POST['room'];
-	$reports = $_POST['report'];
+	//Here we fetch the data from the URL that was passed from our HTML form\
+	$equipmentPick = $_POST['equipmentPick'];
   $report="";
 
-    foreach ($reports as $value){
-      $report .= "$value"." | ";
-    }
-    echo "$report";
-		echo "$room";
+	foreach ($equipmentPick as $value){
+		$report .= "$value"." | ";
+	}
 
 
-	//Here we create a SQL statement that insert data into our database
+	// Here we create a SQL statement that insert data into our database
 	$sql = "INSERT INTO ecstock (room, report, tim, status) VALUES ( '$room','$report', NOW(), 'ACTIVE');";
 
 	//Here we "query" (insert) the data into the database and check if successful
