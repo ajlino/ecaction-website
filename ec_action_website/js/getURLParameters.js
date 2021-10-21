@@ -9,11 +9,22 @@ $(document).ready(function(){
 
   const urlParams = new URLSearchParams(queryString);
 
-  const room = urlParams.get('room');
+  var room = urlParams.get('room');
 
+  if (room == null){
+    $('#roomNumber').modal('show');
+  } else{
+    $("#demo").text("ROOM: " + room);
+    $("#room").val(room);
+    console.log("ROOM for Andy = " + $("#room").val());
+  }
 
-  $("#demo").text("ROOM: " + room);
-  $("#room").val(room);
-  console.log("ROOM for PHP = " + $("#room").val());
+  $('#saveRoomNumber').click(function(){
+    room = $('#roomInput').val();
+    $("#demo").text("ROOM: " + room);
+    $("#room").val(room);
+    console.log("ROOM for Andy = " + $("#room").val());
+    $('#roomNumber').modal('hide');
+  });
 
 });

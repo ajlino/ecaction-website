@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
       referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="css\mystyle.css">
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js\getURLParameters.js"></script>
     <script src="js\buttonToggle.js"></script>
@@ -74,7 +76,7 @@
 <!-- Room Number -->
       <div class="album py-5 bg-light">
         <input type="text" class="d-none" id="room" name="room" />
-        
+
 <!-- Card Container -->
         <div class="container" id="cards">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -245,6 +247,30 @@
           </div>
         </div>
       </div>
+
+<!--Modal Get Room Number if not in URLParameters -->
+      <div class="modal fade" id="roomNumber" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Enter Room Number</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="modal-body">
+                <div class="form-outline">
+                  <input type="number" pattern ="[0-9]*" id="roomInput" class="form-control" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="saveRoomNumber" type="button" class="btn btn-primary">Save Room Number</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
 
     </main>
 

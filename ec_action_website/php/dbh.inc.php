@@ -8,10 +8,10 @@
   //Bellow we create the necessary database connection info
 
   // Webserver
-  //$dbServername = "server311.web-hosting.com";
-  //$dbUsername = "ecactzqq";
-  //$dbPassword = "06ectVmGhAs7";
-  //$dbName = "ecactzqq_ecdatabase";
+  // $dbServername = "server311.web-hosting.com";
+  // $dbUsername = "ecactzqq";
+  // $dbPassword = "06ectVmGhAs7";
+  // $dbName = "ecactzqq_ecdatabase";
 
   //localserver
   $dbServername = "localhost";
