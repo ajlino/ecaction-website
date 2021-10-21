@@ -71,98 +71,108 @@
         </div>
       </section>
 
-      <!-- Cards -->
-
+<!-- Room Number -->
       <div class="album py-5 bg-light">
-
-      <form action="php\action_EnterReport.php" method="post">
-
         <input type="text" class="d-none" id="room" name="room" />
-
+        
+<!-- Card Container -->
         <div class="container" id="cards">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            <!-- Card 1 -->
+<!-- Card 1 -->
             <div class="col">
               <div class="card shadow-sm">
-
                 <!-- <a href="page2.html"> -->
-                  <img id="equipment" class="bd-placeholder-img card-img-top" src="images\cart.jpg" class="card-img-top" />
+                  <img id="stocking" class="bd-placeholder-img card-img-top" src="images\cart.jpg" class="card-img-top" />
                 <!-- </a> -->
-
                 <div class="card-body">
                   <!-- <p class="card-text text-center fs-3">Stock Problem</p> -->
                   <div class="text-center">
-                    <button type="button" class="btn btn-light reportButton" value="Stocking" data-checked = "false">Stocking Problem</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-stocking">
+                      Stocking
+                    </button>
+
                     <input class="form-check-input d-none" type="checkbox" name="report[]" value="Stocking">
                  </div>
                 </div>
               </div>
             </div>
-            <!-- Card 2 -->
+
+<!-- Card 2 -->
             <div class="col">
               <div class="card shadow-sm">
-
                 <!-- <a href="page2.html"> -->
-                  <img class="bd-placeholder-img card-img-top" src="images\opthalmoscope.jpg" class="card-img-top" />
+                  <img id="equipment" class="bd-placeholder-img card-img-top" src="images\opthalmoscope.jpg" class="card-img-top" />
                 <!-- </a> -->
-
                 <div class="card-body">
                   <!-- <p class="card-text text-center fs-3">Stock Problem</p> -->
                   <div class="text-center">
-                    <button type="button" class="btn btn-light reportButton" value="Equipment" data-checked = "false">Equipment Problem</button>
-                    <input class="form-check-input d-none" type="checkbox" name="report[]" value="Equipment">
-                  </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-equipment">
+                      Equipment
+                    </button>
+                 </div>
                 </div>
               </div>
             </div>
-            <!-- Card 3 -->
+
+<!-- Card 3 -->
             <div class="col">
               <div class="card shadow-sm">
-
                 <!-- <a href="page2.html"> -->
-                  <img class="bd-placeholder-img card-img-top" src="images\pc.jpg" class="card-img-top" />
+                  <img id="computer" class="bd-placeholder-img card-img-top" src="images\pc.jpg" class="card-img-top" />
                 <!-- </a> -->
-
                 <div class="card-body">
                   <!-- <p class="card-text text-center fs-3">Stock Problem</p> -->
                   <div class="text-center">
-                    <button type="button" class="btn btn-light reportButton" value="Computer" data-checked = "false">Computer Problem</button>
-                    <input class="form-check-input d-none" type="checkbox" name="report[]" value="Computer">
-                  </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-computer">
+                      Computer
+                    </button>
+                 </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Hidden text input -->
-          <div class="form-group">
-            <textarea class="form-control" rows="3" id="inputbox"></textarea>
-            <div class="container">
-              <div class="row mt-5">
-                <button type="submit" class="btn btn-primary text-">Submit</button>
-              </div>
-            </div>
-          </div>
 
         </div>
-      </form>
+      </div> <!--container-->
 
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!--Modal 1 Equipment -->
-      <div class="modal fade" id="modal-equipment" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+<!--Modal 1 Stocking -->
+      <div class="modal fade" id="modal-stocking" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Optional: Specify items</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="php\action_EnterReport.php" method="post">
               <div class="modal-body">
+                  <!-- Note: name equipmentPick[] sends multiple picks as an array to php -->
                   <select name = "equipmentPick[]" id="equipmentPick" class="selectpicker" multiple aria-label="size 3 select example">
+                    <option selected>General Stocking</option>
                     <option>Tongue Depressors</option>
                     <option>Tape</option>
                     <option>Syringes</option>
@@ -170,7 +180,65 @@
                   </select>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="saveChanges" type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<!--Modal 2 Equipment -->
+      <div class="modal fade" id="modal-equipment" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Optional: Specify items</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="php\action_EnterReport.php" method="post">
+              <div class="modal-body">
+                  <!-- Note: name equipmentPick[] sends multiple picks as an array to php -->
+                  <select name = "equipmentPick[]" id="equipmentPick" class="selectpicker" multiple aria-label="size 3 select example">
+                    <option>Opthalmoscope</option>
+                    <option>Otoscope</option>
+                    <option>Monitor</option>
+                    <option>Blood Pressure Cuff</option>
+                    <option>Thermometer</option>
+                    <option>Cart/Gurney/Bed</option>
+                  </select>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="saveChanges" type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<!--Modal 3 Computer -->
+      <div class="modal fade" id="modal-computer" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Optional: Specify items</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="php\action_EnterReport.php" method="post">
+              <div class="modal-body">
+                  <!-- Note: name equipmentPick[] sends multiple picks as an array to php -->
+                  <select name = "equipmentPick[]" id="equipmentPick" class="selectpicker" multiple aria-label="size 3 select example">
+                    <option>Epic</option>
+                    <option>Other Software</option>
+                    <option>Monitor</option>
+                    <option>Keyboard</option>
+                    <option>Mouse</option>
+                    <option>PC wont Startup</option>
+                  </select>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button id="saveChanges" type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </form>

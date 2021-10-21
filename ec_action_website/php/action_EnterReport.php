@@ -4,38 +4,28 @@
 
 	//Here we fetch the data from the URL that was passed from our HTML form\
 	$equipmentPick = $_POST['equipmentPick'];
-	// $room = $_POST['room'];
-	// $reports = $_POST['report'];
-  // $report="";
+  $report="";
 
 	foreach ($equipmentPick as $value){
-		echo $value;
+		$report .= "$value"." | ";
 	}
 
 
+	// Here we create a SQL statement that insert data into our database
+	$sql = "INSERT INTO ecstock (room, report, tim, status) VALUES ( '$room','$report', NOW(), 'ACTIVE');";
 
-    // foreach ($reports as $value){
-    //   $report .= "$value"." | ";
-    // }
-    // echo "$report";
-		// echo "$room";
+	//Here we "query" (insert) the data into the database and check if successful
+  if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
 
-//
-// 	// Here we create a SQL statement that insert data into our database
-// 	$sql = "INSERT INTO ecstock (room, report, tim, status) VALUES ( '$room','$report', NOW(), 'ACTIVE');";
-//
-// 	//Here we "query" (insert) the data into the database and check if successful
-//   if ($conn->query($sql) === TRUE) {
-//     echo "New record created successfully";
-//   } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-//   }
-//
-// $conn->close();
-//
-// 	//We don't need to do anythin else in order to insert data
-// 	//HOWEVER!!!
-// 	//We have not added ANY security to our code by filtering the data the user typed into the HTML form. We will learn about security later using prepared statements!
-//
-// 	// Here we go back to the front page
-// 	header("Location: ../thank_you.html");
+$conn->close();
+
+	//We don't need to do anythin else in order to insert data
+	//HOWEVER!!!
+	//We have not added ANY security to our code by filtering the data the user typed into the HTML form. We will learn about security later using prepared statements!
+
+	// Here we go back to the front page
+	header("Location: ../thank_you.html");
