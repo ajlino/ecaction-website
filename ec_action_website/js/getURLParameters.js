@@ -7,9 +7,9 @@ $(document).ready(function(){
   const queryString = window.location.search;
   console.log(queryString);
 
-  const urlParams = new URLSearchParams(queryString);
+  var urlParams = new URLSearchParams(queryString);
 
-  const room = urlParams.get('room');
+  var room = urlParams.get('room');
 
 
   $("#demo").text("ROOM: " + room);
