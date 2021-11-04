@@ -16,15 +16,29 @@ $(document).ready(function(){
   } else{
     $("#demo").text("ROOM: " + room);
     $("#room").val(room);
-    console.log("ROOM for Andy = " + $("#room").val());
+    sendRoomNumber(room);
   }
 
   $('#saveRoomNumber').click(function(){
     room = $('#roomInput').val();
     $("#demo").text("ROOM: " + room);
     $("#room").val(room);
-    console.log("ROOM for Andy = " + $("#room").val());
+    sendRoomNumber(room);
     $('#roomNumber').modal('hide');
   });
+
+  function sendRoomNumber(room){
+    console.log(room);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //room entered
+      }
+    };
+    xmlhttp.open("GET", "php/action_EnterRoomNumber.php?q=" + room, true);
+    xmlhttp.send();
+  }
+
+
 
 });

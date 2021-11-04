@@ -1,9 +1,12 @@
 <?php
+
+	session_start();
 	//Here we include our database connection
 	include_once 'dbh.inc.php';
 
 	//Here we fetch the data from the URL that was passed from our HTML form\
 	$equipmentPick = $_POST['equipmentPick'];
+	$room = $_SESSION['room'];
   $report="";
 
 	foreach ($equipmentPick as $value){

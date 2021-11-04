@@ -258,7 +258,9 @@
             </div>
               <div class="modal-body">
                 <div class="form-outline">
-                  <input type="number" pattern ="[0-9]*" id="roomInput" class="form-control" />
+                  <form action="php\action_EnterRoomNumber.php" method="post">
+                    <input type="number" pattern ="[0-9]*" id="roomInput" name="room" class="form-control" />
+                </form>
                 </div>
               </div>
               <div class="modal-footer">
